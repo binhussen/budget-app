@@ -1,0 +1,17 @@
+<div class="flex justify-center">
+  <div class="mt-16 px-8 py-4 w-96 bg-white rounded-lg shadow-lg h-fit">
+    <h2 class="text-xl font-bold text-center text-gray-700">Welcome toBudget Tracker app</h2>
+
+  <% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-warning mb-2" %>
+  <% else %>
+   <button type="button" class=" w-full bg-blue-500 hover:bg-blue-100 rounded-lg py-2 text-center font-bold cursor-pointer mt-8 text-white">
+         <%= link_to "Sign in", new_user_session_path %><br>
+      </button>
+      <button type="button" class=" w-full bg-blue-700 hover:bg-blue-100 rounded-lg py-2 text-center font-bold cursor-pointer mt-8 text-white">
+         <%= link_to "Sign up", new_user_registration_path %>
+      </button>
+  <% end %>
+
+</div>
+</div>

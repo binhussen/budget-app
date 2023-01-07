@@ -1,0 +1,24 @@
+<div class="d-flex flex-column justify-content-between align-items-between" style="height: 80vh">
+  <h1 class="mb-3">Categories</h1>
+
+  <div>
+    <% @categories.each do |category| %>
+      <div class="card mb-1">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <%= image_tag(category.icon, alt: "Icon pic", height: "40px") %>
+            </div>
+            <div class="col-8">
+              <%= link_to category.name, category_path(category) %>
+            </div>
+            <div class="col">
+              $<%= category.payments.sum(:amount) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "ADD NEW CATEGORY", new_category_path, class: "btn btn bg-lime-400 text-white p-4 text-xl" %>
+</div>

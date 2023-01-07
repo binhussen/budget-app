@@ -1,0 +1,32 @@
+<div class="d-flex flex-column justify-content-between align-items-between" style="height: 80vh">
+  <div class="row">
+    <div class="col-8">
+      <h2><%= @category.name %></h2>
+    </div>
+    <div class="col-4">
+      <p>$<%= @total %></p>
+    </div>
+  </div>
+
+  <div>
+    <% @payments.each do |payment| %>
+      <div class="card mb-2">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-10">
+              <%= payment.name %>
+            </div>
+            <div class="col-2">
+              $<%= payment.amount %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="d-flex flex-column justify-content-between align-items-between">
+    <%= link_to "ADD NEW PAYMENT", new_category_payment_path(@category), class: "btn btn bg-lime-400 text-white p-4 text-xl" %> <br>
+    <%= link_to "BACK", categories_path, class: "btn btn-secondary p-4 text-xl" %>
+  </div>
+</div>
