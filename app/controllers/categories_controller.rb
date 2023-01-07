@@ -9,8 +9,8 @@ class CategoriesController < ApplicationController
       flash[:alert] = 'You can only see what you created'
       redirect_to categories_path
     end
-    @expenses = @category.expenses.order(created_at: :desc)
-    @total = @expenses.sum(:amount)
+    @payments = @category.payments.order(created_at: :desc)
+    @total = @payments.sum(:amount)
   end
 
   def new
