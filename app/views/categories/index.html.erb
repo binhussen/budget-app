@@ -9,7 +9,7 @@
             <div class="col">
               <%= image_tag(category.icon, alt: "Icon pic", height: "40px") %>
             </div>
-            <div class="col">
+            <div class="col-6">
               <%= link_to category.name, category_path(category) %>
             </div>
             <div class="col">
@@ -20,5 +20,5 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "Add new category", new_category_path, class: "btn btn-success mt-3" %>
+  <%= link_to "ADD NEW CATEGORY", new_category_path, class: "btn btn bg-lime-400 text-white p-4 text-xl" %>
 </div>
